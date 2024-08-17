@@ -80,6 +80,7 @@ Error generating stack: `+o.message+`
   height: 100vh;
   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
   overflow: hidden;
+  padding: 1rem;
 `,jE=b(K.div)`
   text-align: center;
   padding: 2rem;
@@ -91,7 +92,8 @@ Error generating stack: `+o.message+`
   max-width: 600px;
 
   @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
+    width: 100%;
   }
 `,tp=b.h1`
   font-size: 3.5rem;
@@ -101,7 +103,7 @@ Error generating stack: `+o.message+`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 `,_E=b.p`
   font-size: 1.2rem;
@@ -110,11 +112,11 @@ Error generating stack: `+o.message+`
   font-family: 'Montserrat', sans-serif;
 
   @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 `,dl=b(K.button)`
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   font-family: 'Montserrat', sans-serif;
   background-color: #ffffff;
   color: #fda085;
@@ -128,6 +130,13 @@ Error generating stack: `+o.message+`
     background-color: #fda085;
     color: #ffffff;
   }
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
 `,LE=b(K.div)`
   position: fixed;
   top: 0;
@@ -140,6 +149,11 @@ Error generating stack: `+o.message+`
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding: 2rem;
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    gap: 1.5rem;
+  }
 `,IE=()=>{const[e,t]=P.useState(!1),n=Ag(),r=i=>{t(!1),setTimeout(()=>{n(i)},500)};return M.jsxs(DE,{children:[M.jsx(Tt,{children:!e&&M.jsxs(jE,{initial:{opacity:0,y:50},animate:{opacity:1,y:0},exit:{opacity:0,y:-50},transition:{duration:.5},children:[M.jsx(tp,{children:"Birthday Scrapbook"}),M.jsx(_E,{children:"Celebrate and share memories with loved ones"}),M.jsx(dl,{whileHover:{scale:1.05},whileTap:{scale:.95},onClick:()=>t(!0),children:"Open Scrapbook"})]})}),M.jsx(Tt,{children:e&&M.jsxs(LE,{initial:{y:"100%"},animate:{y:0},exit:{y:"100%"},transition:{type:"spring",damping:20,stiffness:100},children:[M.jsx(tp,{children:"Choose an Option"}),M.jsx(dl,{whileHover:{scale:1.05},whileTap:{scale:.95},onClick:()=>r("/birthday-view"),children:"It's My Day !"}),M.jsx(dl,{whileHover:{scale:1.05},whileTap:{scale:.95},onClick:()=>r("/message-board"),children:"I'm here to leave a message"})]})})]})},VE=b(K.div)`
   background-color: ${e=>e.theme.colors.background};
   padding: 2rem;
@@ -173,6 +187,10 @@ Error generating stack: `+o.message+`
     border-color: ${e=>e.theme.colors.primary};
     box-shadow: 0 0 0 2px ${e=>e.theme.colors.primary}40;
   }
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    font-size: 16px; // Prevents zoom on mobile when focusing
+  }
 `,np=b(K.button)`
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -185,6 +203,11 @@ Error generating stack: `+o.message+`
 
   &:hover {
     background-color: ${e=>e.theme.colors.accent};
+  }
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
   }
 `,Oy=b.div`
   position: relative;
@@ -245,6 +268,7 @@ Error generating stack: `+o.message+`
   @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
     width: 200px;
     min-height: 250px;
+    font-size: 0.9rem;
   }
 `,JE=b.div`
   position: absolute;
@@ -600,16 +624,25 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    font-size: 1.8rem;
+    padding: 1rem;
+    top: 3rem;
+  }
 `,DT=b.div`
   width: 100%;
   min-height: 100vh;
   background: #d4a76a;
   background-image: 
-  repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(0,0,0,.1) 50px, rgba(0,0,0,.1) 51px),
-  repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(0,0,0,.1) 50px, rgba(0,0,0,.1) 51px);
+    repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(0,0,0,.1) 50px, rgba(0,0,0,.1) 51px),
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(0,0,0,.1) 50px, rgba(0,0,0,.1) 51px);
   padding: 2rem;
   box-sizing: border-box;
-  perspective: 1000px;
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    padding: 1rem;
+  }
 `,jT=b(K.button)`
   position: fixed;
   bottom: 2rem;
@@ -638,6 +671,13 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
   &:hover {
     background-color: ${e=>e.theme.colors.accent};
     transform: rotate(180deg);
+  }
+
+  @media (max-width: ${e=>e.theme.breakpoints.mobile}) {
+    width: 50px;
+    height: 50px;
+    bottom: 1.5rem;
+    right: 1.5rem;
   }
 `,_T=()=>{const[e,t]=P.useState([]),[n,r]=P.useState(null),[i,o]=P.useState(!0),[s,a]=P.useState(!0),[l,u]=P.useState(new Set);P.useEffect(()=>{const g=JSON.parse(localStorage.getItem("messages")||"[]");t(g.map(p=>({...p,reactions:p.reactions||{},comments:p.comments||[]})));const v=setTimeout(()=>o(!1),5e3),w=setTimeout(()=>a(!1),1e4);return()=>{clearTimeout(v),clearTimeout(w)}},[]);const f=()=>{localStorage.removeItem("messages"),t([]),u(new Set)},c=(g,v,w)=>{const p=e.map(h=>h.id===g?{...h,initialX:v,initialY:w}:h);t(p),localStorage.setItem("messages",JSON.stringify(p))},d=g=>{const v=e.map(w=>w.id===g.id?g:w);t(v),localStorage.setItem("messages",JSON.stringify(v))},y=g=>{u(v=>new Set(v).add(g))};return M.jsxs(DT,{children:[s&&M.jsx(CT,{}),M.jsx(Vy,{}),M.jsx(Tt,{children:i&&M.jsx(OT,{initial:{opacity:0,y:-50},animate:{opacity:1,y:0},exit:{opacity:0,y:-50},transition:{duration:.5},children:"Happy Birthday! Unwrap your messages and moments!"})}),e.map((g,v)=>M.jsx(AT,{message:g,isRevealed:l.has(g.id),onReveal:()=>y(g.id),onExpand:()=>r(g),onDragEnd:(w,p)=>c(g.id,w,p)},v)),M.jsx(jT,{whileHover:{scale:1.1},whileTap:{scale:.9},onClick:f,"aria-label":"Reset Board"}),M.jsx(Tt,{children:n&&M.jsx(Iy,{...n,onClose:()=>r(null),onUpdateMessage:d})})]})},LT=aS`
   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Permanent+Marker&display=swap');
