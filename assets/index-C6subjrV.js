@@ -209,19 +209,19 @@ Error generating stack: `+o.message+`
   }
 `,BE=({onSubmit:e,onClose:t})=>{const[n,r]=P.useState(""),[i,o]=P.useState(null),[s,a]=P.useState(null),l=c=>{c.target.files&&c.target.files[0]&&o(c.target.files[0])},u=c=>{c.target.files&&c.target.files[0]&&a(c.target.files[0])},f=c=>{c.preventDefault();const d=new FormData;d.append("content",n),i&&d.append("image",i),s&&d.append("audio",s),d.append("initialX",String(Math.random()*(window.innerWidth-250))),d.append("initialY",String(Math.random()*(window.innerHeight-250))),e(d)};return M.jsx(VE,{initial:{opacity:0,scale:.8},animate:{opacity:1,scale:1},exit:{opacity:0,scale:.8},children:M.jsxs(NE,{onSubmit:f,children:[M.jsx(FE,{value:n,onChange:c=>r(c.target.value),placeholder:"Your message",required:!0,rows:4}),M.jsx(Oy,{children:M.jsxs(Dy,{children:[i?"Image selected":"Choose an image",M.jsx(rp,{type:"file",accept:"image/*",onChange:l})]})}),M.jsx($E,{children:M.jsxs(bE,{children:[s?"Audio selected":"Choose an audio file",M.jsx(rp,{type:"file",accept:"audio/*",onChange:u})]})}),M.jsxs(zE,{children:[M.jsx(np,{whileHover:{scale:1.05},whileTap:{scale:.95},type:"submit",children:"Add Message"}),M.jsx(np,{whileHover:{scale:1.05},whileTap:{scale:.95},onClick:t,children:"Cancel"})]})]})})};var jy={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},ip=ve.createContext&&ve.createContext(jy),UE=["attr","size","title"];function WE(e,t){if(e==null)return{};var n=HE(e,t),r,i;if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);for(i=0;i<o.length;i++)r=o[i],!(t.indexOf(r)>=0)&&Object.prototype.propertyIsEnumerable.call(e,r)&&(n[r]=e[r])}return n}function HE(e,t){if(e==null)return{};var n={};for(var r in e)if(Object.prototype.hasOwnProperty.call(e,r)){if(t.indexOf(r)>=0)continue;n[r]=e[r]}return n}function js(){return js=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},js.apply(this,arguments)}function op(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter(function(i){return Object.getOwnPropertyDescriptor(e,i).enumerable})),n.push.apply(n,r)}return n}function _s(e){for(var t=1;t<arguments.length;t++){var n=arguments[t]!=null?arguments[t]:{};t%2?op(Object(n),!0).forEach(function(r){KE(e,r,n[r])}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):op(Object(n)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(n,r))})}return e}function KE(e,t,n){return t=GE(t),t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function GE(e){var t=YE(e,"string");return typeof t=="symbol"?t:t+""}function YE(e,t){if(typeof e!="object"||!e)return e;var n=e[Symbol.toPrimitive];if(n!==void 0){var r=n.call(e,t||"default");if(typeof r!="object")return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return(t==="string"?String:Number)(e)}function _y(e){return e&&e.map((t,n)=>ve.createElement(t.tag,_s({key:n},t.attr),_y(t.child)))}function QE(e){return t=>ve.createElement(XE,js({attr:_s({},e.attr)},t),_y(e.child))}function XE(e){var t=n=>{var{attr:r,size:i,title:o}=e,s=WE(e,UE),a=i||n.size||"1em",l;return n.className&&(l=n.className),e.className&&(l=(l?l+" ":"")+e.className),ve.createElement("svg",js({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},n.attr,r,s,{className:l,style:_s(_s({color:e.color||n.color},n.style),e.style),height:a,width:a,xmlns:"http://www.w3.org/2000/svg"}),o&&ve.createElement("title",null,o),e.children)};return ip!==void 0?ve.createElement(ip.Consumer,null,n=>t(n)):t(jy)}function ZE(e){return QE({tag:"svg",attr:{viewBox:"0 0 512 512"},child:[{tag:"path",attr:{d:"M470.38 1.51L150.41 96A32 32 0 0 0 128 126.51v261.41A139 139 0 0 0 96 384c-53 0-96 28.66-96 64s43 64 96 64 96-28.66 96-64V214.32l256-75v184.61a138.4 138.4 0 0 0-32-3.93c-53 0-96 28.66-96 64s43 64 96 64 96-28.65 96-64V32a32 32 0 0 0-41.62-30.49z"},child:[]}]})(e)}const qE=$(Z.div)`
   position: absolute;
-  width: 280px;
-  min-height: 320px;
+  width: 250px;
+  min-height: 300px;
   background-color: white;
   color: #333;
   padding: 15px 15px 40px;
-  border-radius: 3px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   cursor: move;
   overflow: hidden;
-  transform: rotate(${()=>Math.random()*20-10}deg);
+  transform: rotate(${()=>Math.random()*10-5}deg);
   z-index: ${e=>e.isDragging?1e3:1};
-  transition: z-index 0s, box-shadow 0.3s ease;
-  border: 15px solid white;
+  transition: z-index 0s;
+
 
   &:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -230,11 +230,14 @@ Error generating stack: `+o.message+`
   &::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
     background-color: ${e=>e.backgroundColor};
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 `,JE=$.img`
   width: 100%;
